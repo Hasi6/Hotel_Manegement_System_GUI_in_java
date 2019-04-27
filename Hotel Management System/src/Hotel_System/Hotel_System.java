@@ -5,6 +5,11 @@
  */
 package Hotel_System;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -31,157 +36,158 @@ public class Hotel_System extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jLocaleChooser1 = new com.toedter.components.JLocaleChooser();
+        FirstName = new javax.swing.JLabel();
+        CustomerRef = new javax.swing.JLabel();
+        Address = new javax.swing.JLabel();
+        LastName = new javax.swing.JLabel();
+        Email = new javax.swing.JLabel();
+        CustomerMobile = new javax.swing.JLabel();
+        IdNo = new javax.swing.JLabel();
+        Nationality = new javax.swing.JLabel();
+        txtFirstName = new javax.swing.JTextField();
+        txtCustomerRef = new javax.swing.JTextField();
+        txtAddress = new javax.swing.JTextField();
+        txtLastName = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        txtCustomerMobile = new javax.swing.JTextField();
+        txtIdNo = new javax.swing.JTextField();
+        jLocalNationality = new com.toedter.components.JLocaleChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        CheckIn = new javax.swing.JLabel();
+        Gender = new javax.swing.JLabel();
+        RoomType = new javax.swing.JLabel();
+        CheckOut = new javax.swing.JLabel();
+        RoomExtNo = new javax.swing.JLabel();
+        RoomNo = new javax.swing.JLabel();
+        comboRoomExtNo = new javax.swing.JComboBox<>();
+        jDateCheckOut = new com.toedter.calendar.JDateChooser();
+        jDateCheckIn = new com.toedter.calendar.JDateChooser();
         jPanel1 = new javax.swing.JPanel();
-        Update = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        Exit = new javax.swing.JButton();
         Delete = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        YourBill = new javax.swing.JLabel();
+        Tax = new javax.swing.JLabel();
+        Total = new javax.swing.JLabel();
+        txtYourBill = new javax.swing.JTextField();
+        txtTax = new javax.swing.JTextField();
+        txtTotal = new javax.swing.JTextField();
+        Reset = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
+        Update = new javax.swing.JButton();
+        TotalCost = new javax.swing.JButton();
+        Add = new javax.swing.JButton();
+        comboGender = new javax.swing.JComboBox<>();
+        comboRoomType = new javax.swing.JComboBox<>();
+        comboRoomNo = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("First Name :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
+        FirstName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        FirstName.setText("First Name :");
+        getContentPane().add(FirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Customer Ref:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 20));
+        CustomerRef.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CustomerRef.setText("Customer Ref:");
+        getContentPane().add(CustomerRef, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 20));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Address : ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 20));
+        Address.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Address.setText("Address : ");
+        getContentPane().add(Address, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 20));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Last Name :");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
+        LastName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        LastName.setText("Last Name :");
+        getContentPane().add(LastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Email :");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 20));
+        Email.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Email.setText("Email :");
+        getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 20));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setText("Customer Mobile :");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, 20));
+        CustomerMobile.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CustomerMobile.setText("Customer Mobile :");
+        getContentPane().add(CustomerMobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, 20));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("National Id Number :");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, 20));
+        IdNo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        IdNo.setText("National Id Number :");
+        getContentPane().add(IdNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, 20));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Nationality :");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 20));
+        Nationality.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Nationality.setText("Nationality :");
+        getContentPane().add(Nationality, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 20));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtFirstName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtFirstNameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 250, -1));
+        getContentPane().add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 250, -1));
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtCustomerRef.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtCustomerRef.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtCustomerRefActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 250, -1));
+        getContentPane().add(txtCustomerRef, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 250, -1));
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtAddress.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtAddressActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 250, -1));
+        getContentPane().add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 250, -1));
 
-        jTextField4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtLastName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtLastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtLastNameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 250, -1));
+        getContentPane().add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 250, -1));
 
-        jTextField5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 250, -1));
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 250, -1));
 
-        jTextField6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txtCustomerMobile.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtCustomerMobile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txtCustomerMobileActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 250, -1));
+        getContentPane().add(txtCustomerMobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 250, -1));
 
-        jTextField7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        txtIdNo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtIdNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                txtIdNoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 250, -1));
+        getContentPane().add(txtIdNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 250, -1));
 
-        jLocaleChooser1.addActionListener(new java.awt.event.ActionListener() {
+        jLocalNationality.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLocaleChooser1ActionPerformed(evt);
+                jLocalNationalityActionPerformed(evt);
             }
         });
-        getContentPane().add(jLocaleChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+        getContentPane().add(jLocalNationality, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Customer Ref :", "First Name :", "Last Name :", "Address :", "customer Mobile :", "Email :", "Nationality :", "National Id Nu :", "Gender :", "Check In Date :", "Check Out Date :", "Room Type :", "Meals :", "Room No :", "Room Ext. No :"
+                "Customer Ref :", "First Name :", "Last Name :", "Address :", "customer Mobile :", "Email :", "Nationality :", "National Id Nu :", "Gender :", "Check In Date :", "Check Out Date :", "Room Type :", "Room No :", "Room Ext. No :"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -192,78 +198,84 @@ public class Hotel_System extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 1080, 410));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setText("Check In Date :");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 20));
+        CheckIn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CheckIn.setText("Check In Date :");
+        getContentPane().add(CheckIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 20));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("Gender :");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, 20));
+        Gender.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Gender.setText("Gender :");
+        getContentPane().add(Gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, 20));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setText("Room Type :");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, 20));
+        RoomType.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        RoomType.setText("Room Type :");
+        getContentPane().add(RoomType, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, 20));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setText("Check Out Date :");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 20));
+        CheckOut.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CheckOut.setText("Check Out Date :");
+        getContentPane().add(CheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 20));
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel15.setText("Room Ext. No :");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, 20));
+        RoomExtNo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        RoomExtNo.setText("Room Ext. No :");
+        getContentPane().add(RoomExtNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, 20));
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel16.setText("Room No  :");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, 20));
+        RoomNo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        RoomNo.setText("Room No  :");
+        getContentPane().add(RoomNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, 20));
 
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "101", "102", "03", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "017", "018", "019", "020" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 250, -1));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 250, -1));
-        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 250, -1));
+        comboRoomExtNo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        comboRoomExtNo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Room Ext No", "101", "102", "03", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "017", "018", "019", "020" }));
+        getContentPane().add(comboRoomExtNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 250, -1));
+        getContentPane().add(jDateCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 250, -1));
+        getContentPane().add(jDateCheckIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 250, -1));
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        Update.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Update.setText("Update");
-        Update.addActionListener(new java.awt.event.ActionListener() {
+        Delete.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Delete.setText("Delete");
+        Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateActionPerformed(evt);
+                DeleteActionPerformed(evt);
             }
         });
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel17.setText("Your Bill :");
+        YourBill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        YourBill.setText("Your Bill :");
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setText("Tax :");
+        Tax.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Tax.setText("Tax :");
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel19.setText("Total :");
+        Total.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Total.setText("Total :");
 
-        jTextField8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        txtYourBill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtYourBill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                txtYourBillActionPerformed(evt);
             }
         });
 
-        jTextField10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        txtTax.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtTax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                txtTaxActionPerformed(evt);
             }
         });
 
-        jTextField11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        txtTotal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                txtTotalActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setText("Reset");
+        Reset.setBackground(java.awt.Color.orange);
+        Reset.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Reset.setText("Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
 
         Exit.setBackground(java.awt.Color.red);
         Exit.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -274,19 +286,29 @@ public class Hotel_System extends javax.swing.JFrame {
             }
         });
 
-        Delete.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Delete.setText("Delete");
-        Delete.addActionListener(new java.awt.event.ActionListener() {
+        Update.setBackground(java.awt.Color.green);
+        Update.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Update.setText("Update");
+        Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteActionPerformed(evt);
+                UpdateActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton3.setText("Total Cost");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        TotalCost.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        TotalCost.setText("Total Cost");
+        TotalCost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                TotalCostActionPerformed(evt);
+            }
+        });
+
+        Add.setBackground(java.awt.Color.blue);
+        Add.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Add.setText("Add");
+        Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddActionPerformed(evt);
             }
         });
 
@@ -297,23 +319,25 @@ public class Hotel_System extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel19))
+                    .addComponent(Tax, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(YourBill)
+                    .addComponent(Total))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField11))
-                .addGap(301, 301, 301)
-                .addComponent(jButton3)
+                    .addComponent(txtTax, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                    .addComponent(txtYourBill, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTotal))
+                .addGap(330, 330, 330)
+                .addComponent(TotalCost)
+                .addGap(18, 18, 18)
+                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226)
+                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(443, 443, 443))
         );
@@ -323,98 +347,112 @@ public class Hotel_System extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TotalCost, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(26, 26, 26))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtYourBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46)
+                                .addComponent(txtTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(92, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(YourBill, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(49, 49, 49)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Tax, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(23, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26))))))
+                            .addComponent(Total, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 1560, 200));
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 250, -1));
+        comboGender.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        comboGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+        getContentPane().add(comboGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 250, -1));
 
-        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Double", "Villa", "Apartment" }));
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 250, -1));
+        comboRoomType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        comboRoomType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Room Type", "Single", "Double", "Villa", "Apartment" }));
+        getContentPane().add(comboRoomType, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 250, -1));
 
-        jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "020" }));
-        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 250, -1));
+        comboRoomNo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        comboRoomNo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Room No", "001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "020" }));
+        getContentPane().add(comboRoomNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 250, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtFirstNameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtCustomerRefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomerRefActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtCustomerRefActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtAddressActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtLastNameActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtCustomerMobileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomerMobileActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtCustomerMobileActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtIdNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdNoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtIdNoActionPerformed
 
-    private void jLocaleChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLocaleChooser1ActionPerformed
+    private void jLocalNationalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLocalNationalityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLocaleChooser1ActionPerformed
+    }//GEN-LAST:event_jLocalNationalityActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void txtYourBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtYourBillActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_txtYourBillActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void txtTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTaxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_txtTaxActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_txtTotalActionPerformed
 
-    private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateActionPerformed
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        if(jTable1.getSelectedRow()== -1){
+            if(jTable1.getRowCount()==0){
+                JOptionPane.showMessageDialog(null, "No data to delete ",
+                        "Hotel Management System", JOptionPane.OK_OPTION);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Select Row to delete ",
+                        "Hoptel System ",JOptionPane.OK_OPTION);
+            }
+        }
+        else{
+            model.removeRow(jTable1.getSelectedRow());
+        }
+    }//GEN-LAST:event_DeleteActionPerformed
     private JFrame frame;
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         frame = new JFrame("Exit");
@@ -424,19 +462,148 @@ public class Hotel_System extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ExitActionPerformed
 
-    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+    private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         if (jTable1.getSelectedRow() == -1) {
              if (jTable1.getRowCount() == 0){
-                 JOptionPane.showMessageDialog(null, "Updated" , "Return The System",
+                 JOptionPane.showMessageDialog(null, "Update Confirm" , "Return The System",
                          JOptionPane.OK_OPTION);
              }
         }
-    }//GEN-LAST:event_DeleteActionPerformed
+    }//GEN-LAST:event_UpdateActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void TotalCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalCostActionPerformed
+        
+        int SingleRoom = 35;
+        int DoubleRoom = 55;
+        int Villa = 100;
+        int Apartment = 80;
+        
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+        Date Check_In_Date = null;
+        Date Check_Out_Date = null;
+        
+        try{
+            Check_In_Date = format.parse(format.format(jDateCheckIn.getDate()));
+            Check_Out_Date = format.parse(format.format(jDateCheckOut.getDate()));
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+        
+        long daysSpend = Check_Out_Date.getTime() - Check_In_Date.getTime();
+        int Days = (int)(daysSpend /1000/60/60/24);
+        
+        if (comboRoomType.getSelectedItem().equals("Single")){
+            
+            txtYourBill.setText(Double.toString( Days * SingleRoom));
+            txtTax.setText(Double.toString( Days * SingleRoom));
+            txtTotal.setText(Double.toString( Days * SingleRoom));
+                        
+            double q = Double.parseDouble(txtTax.getText());
+            q=(q * 0.25)/100;
+            String tax = String.format(("$ %.2f"),q);
+            txtTax.setText(tax);
+            
+            double t = Double.parseDouble(txtTotal.getText());
+            String total = String.format(("$ %.2f"),t+q);
+            txtTotal.setText(total);
+            
+        }
+        else if (comboRoomType.getSelectedItem().equals("Double")){
+            
+            txtYourBill.setText(Double.toString( Days * DoubleRoom));
+            txtTax.setText(Double.toString( Days * DoubleRoom));
+            txtTotal.setText(Double.toString( Days * DoubleRoom));
+                    
+            double q = Double.parseDouble(txtTax.getText());
+            q=(q * 0.25)/100;
+            String tax = String.format(("$ %.2f"),q);
+            txtTax.setText(tax);
+            
+            double t = Double.parseDouble(txtTotal.getText());
+            String total = String.format(("$ %.2f"),(q+t));
+            txtTotal.setText(total);
+            
+        }
+        else if (comboRoomType.getSelectedItem().equals("Vila")){
+            
+            txtYourBill.setText(Double.toString( Days * Villa));
+            txtTax.setText(Double.toString( Days * Villa));
+            txtTotal.setText(Double.toString( Days * Villa));
+            
+            
+            double q = Double.parseDouble(txtTax.getText());
+            q=(q * 0.25)/100;
+            String tax = String.format(("$ %.2f"),q);
+            txtTax.setText(tax);
+            
+            double t = Double.parseDouble(txtTotal.getText());
+            String total = String.format(("$ %.2f"),(q+t));
+            txtTotal.setText(total);
+            
+        }
+        else if (comboRoomType.getSelectedItem().equals("Apartment")){
+            
+            txtYourBill.setText(Double.toString( Days * Apartment));
+            txtTax.setText(Double.toString( Days * Apartment));
+            txtTotal.setText(Double.toString( Days * Apartment));
+            
+                     
+            double q = Double.parseDouble(txtTax.getText());
+            q=(q * 0.25)/100;
+            String tax = String.format(("$ %.2f"),q);
+            txtTax.setText(tax);
+            
+            double t = Double.parseDouble(txtTotal.getText());
+            String total = String.format(("$ %.2f"),(q+t));
+            txtTotal.setText(total);
+            
+        }
+    }//GEN-LAST:event_TotalCostActionPerformed
+
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+       DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+       model.setRowCount(0);
+       
+       txtCustomerRef.setText(null);
+       txtFirstName.setText(null);
+       txtLastName.setText(null);
+       txtAddress.setText(null);
+       txtCustomerMobile.setText(null);
+       txtEmail.setText(null);
+       jLocalNationality.setSelectedIndex(1);
+       txtIdNo.setText(null);
+       comboGender.setSelectedIndex(0);
+       jDateCheckIn.setDate(null);
+       jDateCheckOut.setDate(null);
+       comboRoomType.setSelectedIndex(0);
+       comboRoomNo.setSelectedIndex(0);
+       comboRoomExtNo.setSelectedIndex(0);
+       txtYourBill.setText(null);
+       txtTax.setText(null);
+       txtTotal.setText(null);
+       
+    }//GEN-LAST:event_ResetActionPerformed
+
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{
+            txtCustomerRef.getText(),
+            txtFirstName.getText(),
+            txtLastName.getText(),
+            txtAddress.getText(),
+            txtCustomerMobile.getText(),
+            txtEmail.getText(),
+            jLocalNationality.getSelectedItem(),
+            txtIdNo.getText(),
+            comboGender.getSelectedItem(),
+            jDateCheckIn.getDate(),
+            jDateCheckOut.getDate(),
+            comboRoomType.getSelectedItem(),
+            comboRoomNo.getSelectedItem(),
+            comboRoomExtNo.getSelectedItem(),
+        });
+    }//GEN-LAST:event_AddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -474,47 +641,48 @@ public class Hotel_System extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Add;
+    private javax.swing.JLabel Address;
+    private javax.swing.JLabel CheckIn;
+    private javax.swing.JLabel CheckOut;
+    private javax.swing.JLabel CustomerMobile;
+    private javax.swing.JLabel CustomerRef;
     private javax.swing.JButton Delete;
+    private javax.swing.JLabel Email;
     private javax.swing.JButton Exit;
+    private javax.swing.JLabel FirstName;
+    private javax.swing.JLabel Gender;
+    private javax.swing.JLabel IdNo;
+    private javax.swing.JLabel LastName;
+    private javax.swing.JLabel Nationality;
+    private javax.swing.JButton Reset;
+    private javax.swing.JLabel RoomExtNo;
+    private javax.swing.JLabel RoomNo;
+    private javax.swing.JLabel RoomType;
+    private javax.swing.JLabel Tax;
+    private javax.swing.JLabel Total;
+    private javax.swing.JButton TotalCost;
     private javax.swing.JButton Update;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private com.toedter.components.JLocaleChooser jLocaleChooser1;
+    private javax.swing.JLabel YourBill;
+    private javax.swing.JComboBox<String> comboGender;
+    private javax.swing.JComboBox<String> comboRoomExtNo;
+    private javax.swing.JComboBox<String> comboRoomNo;
+    private javax.swing.JComboBox<String> comboRoomType;
+    private com.toedter.calendar.JDateChooser jDateCheckIn;
+    private com.toedter.calendar.JDateChooser jDateCheckOut;
+    private com.toedter.components.JLocaleChooser jLocalNationality;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtCustomerMobile;
+    private javax.swing.JTextField txtCustomerRef;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtIdNo;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtTax;
+    private javax.swing.JTextField txtTotal;
+    private javax.swing.JTextField txtYourBill;
     // End of variables declaration//GEN-END:variables
 }
